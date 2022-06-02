@@ -1,0 +1,51 @@
+.Note-List{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right:20px;
+    .header{
+        display: flex;
+        flex-direction: column;
+        gap: 60px; 
+        .title{
+            
+        }
+        .number{
+
+        }
+    }
+
+    .body{
+        display: flex;
+        flex-direction: column;
+        margin-top:40px;
+        gap: 30px;
+        .note-card{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            border:1px solid rgba(255, 255, 255, 0.212);
+            padding: 40px;
+            transition: 0s ;
+            .note-card-head{
+                .note-card-title{
+                    
+                }
+                .note-card-desc{
+
+                }
+            }
+            &:hover{
+                color:rgb(0, 0, 0);
+                cursor: pointer;
+                border:1px solid rgba(255, 255, 255, 0);
+                background-color: rgb(255, 255, 255);
+                transition-duration:0.7s;
+            }
+        }
+        .note-card-date{
+
+        }
+    }
+}

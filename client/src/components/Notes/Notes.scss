@@ -1,0 +1,67 @@
+.Notes{
+    background: linear-gradient(101deg,rgb(0, 0, 0) -9%, rgba(98, 97, 97, 0.08) 24.55%, #000000 78.42% );
+    box-shadow: -26px -6px 57px -9px #000000, inset 0px -1px 0px rgba(159 ,139 ,139 , 0.48);
+    border-radius: 0px;
+    color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .note-header{
+        display: flex;
+        flex-direction: row;
+        height:33px;
+        margin-top:10%;
+        margin-left:10%;
+        margin-right: 3%;
+        color:rgba(255, 255, 255, 0.61);
+        justify-content:space-between;
+        .note-header-date{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .note-header-action-btn{
+            .action-btn{
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content:center;
+            }
+        }
+    }
+
+    .note-body{
+        display: flex;
+        flex-direction: column;
+        margin-left:10%;
+        .note-body-head{
+            height:fit-content;
+            margin-top: 20px;
+            input{
+                font-size: 50px;
+                -webkit-appearance: none;
+                background-color:rgba(255, 255, 255, 0);
+                border-color: rgba(255, 255, 255, 0);
+                width: -webkit-fill-available;
+                color:whitesmoke;
+            }
+            input:focus{
+                outline: none;
+            }
+        }
+        .note-body-content{
+            margin-top: 40px;
+            height:70%;
+            textarea{
+                font-size: 20px;
+                -webkit-appearance: none;
+                background-color:rgba(255, 255, 255, 0);
+                border-color: rgba(255, 255, 255, 0);
+                width: -webkit-fill-available;
+                color:whitesmoke;
+            }
+            textarea:focus{
+                outline: none;
+            }
+        }
+    }
+}

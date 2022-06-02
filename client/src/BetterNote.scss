@@ -1,13 +1,20 @@
 *{
     margin:0;
     padding: 0;
-    height: 100%;
+    height: 115%;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
 }
 
 .BetterNote{
-    display:flex;
-    align-items:center;
-    height:100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
     background-color: #282828;
-    color:white;
+    color: white;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
 }
