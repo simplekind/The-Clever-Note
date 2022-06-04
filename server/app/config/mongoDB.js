@@ -6,7 +6,7 @@ try{
     M_CONNECT = mongoClient.connect(url,{
         useUnifiedTopology: true
     });
-    module.exports = {MONGO_DB,mongoClient} ;
+    module.exports = {MONGO_DB,M_CONNECT} ;
 }catch(err){
     console.log(err);
 }

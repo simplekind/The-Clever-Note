@@ -8,7 +8,7 @@ exports.createNote = async (req,res)  =>{
             desc : '',
             createdAt : getTime,
             updatedAt : getTime
-        }
+        };
         id = await setNote(newNote);
         newNote['_id']= id;
         res.status(200).send(newNote);

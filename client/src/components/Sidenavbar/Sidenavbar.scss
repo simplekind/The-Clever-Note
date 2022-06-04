@@ -111,31 +111,35 @@
             height:fit-content;
             color:grey;
             .sidenavbar-mid-notes-list-note{
-                display: flex;
-                flex-direction: row;
-                .arrow-down-icon{
-                    margin-right: 10px;
-                    font-size: 13px;
+                a{
+                    display: flex;
+                    flex-direction: row;
+                    text-decoration: none;
+                    color:inherit;
+                    .arrow-down-icon{
+                        margin-right: 10px;
+                        font-size: 13px;
                     margin-top: 3px;
-                }
-                .star-icon, .note-icon,.faBook{
-                    margin-right: 10px;
-                    margin-top:2px;
-                }
-                .name{
-                    height:fit-content;
-                }
-                .tag-icon{
-                    font-size: 12px;
-                    margin-top: 6px;
-                }
-                &:hover{
-                    color:white;
-                    cursor: pointer;
-                }
-                &:active{
-                    color:white;
-                    cursor:default;                    
+                    }
+                    .star-icon, .note-icon,.faBook{
+                        margin-right: 10px;
+                        margin-top:2px;
+                    }
+                    .name{
+                        height:fit-content;
+                    }
+                    .tag-icon{
+                        font-size: 12px;
+                        margin-top: 6px;
+                    }
+                    &:hover{
+                        color:white;
+                        cursor: pointer;
+                    }
+                    &:active{
+                        color:white;
+                        cursor:default;                    
+                    }
                 }
             }
         }
