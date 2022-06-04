@@ -1,19 +1,37 @@
-// importing react component and styling sheet
-import React from 'react';
+import {React,useState,useContext} from 'react';
 import './Sidenavbar.scss';
-// importing npm packages for styling 
+import {NotesContext} from './../../context/context';
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleDown,faAngleRight,faSearch,faPlus,faStar,faNoteSticky,faBook,faPerson,faTags,faTrash} from '@fortawesome/free-solid-svg-icons';
-import {NavLink} from 'react-router-dom';
-// importing apis
+import {NavLink,useNavigate} from 'react-router-dom';
+
 import {postRequest} from './../../utils/apiRequests'
 import {BASE_URL,CREATE_NOTE} from './../../utils/apiEndpoints'
 
 function Sidenavbar(){
+    const notesContext = useContext(NotesContext);
+    const navigate = useNavigate();
+    const [err,setErr] = useState(null);
 
     const handleCreateNote = async() => {
         const res = await postRequest(`${BASE_URL}${CREATE_NOTE}`);
-        console.log(res);
+        if(res.error){
+            setErr(res.error);
+            console.log(err);
+            return false;
+        }
+        if(res._id){
+            notesContext.notesDispatch({
+                type:'createNoteSuccess',
+                payload:res
+            })
+            navigate({
+                pathname: `/all-notes/${res._id}`,
+                note:res
+            })
+        }
+        return true;
     }
 
     return (

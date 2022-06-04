@@ -87,13 +87,27 @@
                 padding: 5px 5px 5px 5px;
                 border-radius: 100%;
                 font-size: 30px;
-
-                &:hover{
-                    background-color: #0598de;
-                    cursor:pointer;
-                }
+                transition: all ;
             }
             
+            .name{
+                transition: all ;
+                color:grey;
+            }
+
+            &:hover{
+                cursor:pointer;
+                .plus-icon{
+                    transition-duration: 0.4s;
+                    background-color: #0598de;
+                }
+                
+                .name{
+                    transition-duration: 0.4s;
+                    color:white;
+                }
+            }
+
             .name{
                 margin-top: 10px;
             }
@@ -119,7 +133,7 @@
                     .arrow-down-icon{
                         margin-right: 10px;
                         font-size: 13px;
-                    margin-top: 3px;
+                        margin-top: 3px;
                     }
                     .star-icon, .note-icon,.faBook{
                         margin-right: 10px;
