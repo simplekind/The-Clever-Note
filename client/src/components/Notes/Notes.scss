@@ -25,6 +25,10 @@
                 display: flex;
                 flex-direction: column-reverse;
                 justify-content:center;
+                &:hover{
+                    cursor: pointer;
+                    color:white;
+                }
             }
         }
     }

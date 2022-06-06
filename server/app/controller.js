@@ -1,15 +1,18 @@
-const {getTime} = require('./helper')
+const { query } = require('express');
+const { getTime } = require('./helper');
 const {setNote,fetchAllNotes,updateNote,deleteNote} = require('./model')
 
 exports.createNote = async (req,res)  =>{
     try{
-        newNote ={
+        var currentTime = Date.now();
+        var newNote ={
             title: 'Untitled',
             desc : '',
-            createdAt : getTime,
-            updatedAt : getTime
+            createdAt: currentTime,
+            updatedAt: currentTime,
+            archive: 0
         };
-        id = await setNote(newNote);
+        var id = await setNote(newNote);
         newNote['_id']= id;
         res.status(200).send(newNote);
     }catch(err){
@@ -19,13 +22,13 @@ exports.createNote = async (req,res)  =>{
 
 exports.getAllNotes = async(req,res)=>{
     try{
-        query ={
+        var query ={
             archive: 0
         };
         if(req.params.type == 'trash'){
             query.archive =1;
         }
-        data= await fetchAllNotes(query);
+        var data= await fetchAllNotes(query);
         res.status(200).send(data);
     }catch(err){
         res.status(400).send(err.message);    
@@ -34,9 +37,10 @@ exports.getAllNotes = async(req,res)=>{
 
 exports.updateNoteById = async(req, res)=>{
     try{
-        currentTime = getTime();
-        query = {
-            ...req.body,
+        var currentTime = getTime();
+        var query = {
+            title:res.title,
+            desc:res.desc,
             updatedAt: currentTime
         };
         await updateNote(req.params.id,query);

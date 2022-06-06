@@ -15,7 +15,9 @@ function Sidenavbar(){
     const [err,setErr] = useState(null);
 
     const handleCreateNote = async() => {
+        console.log(`${BASE_URL}${CREATE_NOTE}`);
         const res = await postRequest(`${BASE_URL}${CREATE_NOTE}`);
+        console.log(res);
         if(res.error){
             setErr(res.error);
             console.log(err);
@@ -29,9 +31,8 @@ function Sidenavbar(){
             navigate({
                 pathname: `/all-notes/${res._id}`,
                 note:res
-            })
+            }) // this note will be used as payload in notes js to add the component
         }
-        return true;
     }
 
     return (
@@ -61,45 +62,13 @@ function Sidenavbar(){
             </div>
             <div className="sidenavbar-mid">
                 <div className="sidenavbar-mid-notes-list">
-                    <div className="sidenavbar-mid-notes-list-note">
-                        <NavLink to="/dummy-1">
-                            <FontAwesomeIcon className="arrow-down-icon" icon ={faAngleRight}/>
-                            <FontAwesomeIcon className="star-icon" icon ={faStar}/>
-                            <div className="name">
-                                Shortcuts
-                            </div>  
-                        </NavLink>
-                    </div>
                     <div className="sidenavbar-mid-notes-list-note sidenavbar-mid-notes-list-all-notes">
                         <NavLink to="/all-notes">
                         <FontAwesomeIcon className="note-icon" icon ={faNoteSticky}/>
                         <div className="name">
-                            All Notes
-                        </div>  
-                        </NavLink>
-                    </div>
-                    <div className="sidenavbar-mid-notes-list-note sidenavbar-mid-notes-list-notebook">
-                        <NavLink to="/dummy-1">
-                        <FontAwesomeIcon className="arrow-down-icon" icon ={faAngleRight}/>
-                        <FontAwesomeIcon className="faBook" icon ={faBook}/>
-                        <div className="name">
-                            Notebooks
-                        </div>  
-                        </NavLink>
-                    </div>
-                    <div className="sidenavbar-mid-notes-list-note sidenavbar-mid-notes-list-all-notes">
-                        <NavLink to="/dummy-1">
-                        <FontAwesomeIcon className="note-icon" icon ={faPerson}/>
-                        <div className="name">
-                            Shared with me
-                        </div>  
-                        </NavLink>
-                    </div>
-                    <div className="sidenavbar-mid-notes-list-note sidenavbar-mid-notes-list-all-notes">
-                        <NavLink to="/dummy-1">
-                        <FontAwesomeIcon className="note-icon tag-icon" icon ={faTags}/>
-                        <div className="name">
-                            Tags
+                            Save and 
+                            <br/>
+                            View Notes
                         </div>  
                         </NavLink>
                     </div>
