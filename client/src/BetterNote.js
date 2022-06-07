@@ -21,7 +21,7 @@ function BetterNote() {
   const [notes,notesDispatch] = useReducer(NoteReducer,initialState);
     
   return (
-    <Router>
+    <Router basename='/'>
       <NotesContext.Provider value = {{notesState:notes,notesDispatch}}>
         <div className="BetterNote">
         <Sidenavbar/>
